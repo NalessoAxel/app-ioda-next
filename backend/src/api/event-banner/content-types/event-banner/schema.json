@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_banners",
+  "info": {
+    "singularName": "event-banner",
+    "pluralName": "event-banners",
+    "displayName": "event_banner",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "event_banner": {
+      "type": "richtext",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}
