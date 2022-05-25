@@ -45,18 +45,6 @@ const Menu = ({ description }) => {
 					position="relative"
 					alignItems="center"
 					w={['100%']}
-					_before={{
-						content: '" "',
-						display: 'block',
-						width: '2px',
-						height: ['438%;', '531px'],
-						// top: [' -230%;%', ' 25%'],
-						top: 'calc(50% - 531px / 2)',
-						position: 'absolute',
-						transform: ['rotate(90deg)', 'rotate(0deg)'],
-						left: '0px',
-						background: 'black',
-					}}
 				>
 					<Text
 						color="black"

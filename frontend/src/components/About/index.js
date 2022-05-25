@@ -39,6 +39,19 @@ const About = ({ aboutText }) => {
 					py="98px"
 					pl="56px"
 					pr="52px"
+					h="100%"
+					_after={{
+						content: '" "',
+						display: 'block',
+						width: '2px',
+						height: [' 273%', '531px'],
+						top: 'calc(40% - 531px / 2)',
+						position: 'absolute',
+
+						transform: ['rotate(90deg)', 'rotate(0deg)'],
+						right: '0',
+						background: 'black',
+					}}
 				>
 					<Box>
 						<Text
