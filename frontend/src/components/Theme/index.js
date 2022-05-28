@@ -22,7 +22,7 @@ breakpoints.xxl = '1440px';
 
 // ? https://chakra-ui.com/docs/theming/theme#colors
 const colors = {
-	primary: '#778F74',
+	primary: '#EDD372',
 };
 
 // ? https://chakra-ui.com/docs/theming/theme#spacing

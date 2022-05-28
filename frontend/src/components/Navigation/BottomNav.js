@@ -158,7 +158,7 @@ const BottomNav = () => {
 									as={Link}
 									key={index + item.tab}
 									fontSize="18px"
-									color="white"
+									color="black"
 									textTransform="uppercase"
 									cursor="pointer"
 									onClick={() => handleScrollToId(`${item.id}`)}
@@ -180,7 +180,7 @@ const BottomNav = () => {
 								<ArrowBackIcon
 									w={10}
 									h={8}
-									color="white"
+									color="black"
 									animation={slideAnimation}
 									style={{
 										marginLeft: '8px',
@@ -190,7 +190,7 @@ const BottomNav = () => {
 								<ArrowForwardIcon
 									w={10}
 									h={8}
-									color="white"
+									color="black"
 									animation={slideAnimation}
 									style={{
 										marginLeft: '8px',
