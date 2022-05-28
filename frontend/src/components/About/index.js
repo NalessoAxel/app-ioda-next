@@ -13,6 +13,7 @@ const About = ({ aboutText }) => {
 			bgColor="white"
 			zIndex="100"
 			position="relative"
+			borderTop="1px solid black"
 		>
 			<Flex
 				minH="calc(100vh - 115px - 62px)"

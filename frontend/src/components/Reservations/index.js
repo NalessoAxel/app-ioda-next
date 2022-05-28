@@ -10,6 +10,7 @@ const Reservations = () => {
 			data-scroll-section
 			minH="calc(100vh - 115px -  62px)"
 			minWidth="33vw"
+			borderTop="1px solid black"
 		>
 			<Flex
 				justifyContent="center"

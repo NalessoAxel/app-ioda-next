@@ -4,14 +4,36 @@
   "info": {
     "singularName": "menu-pdf",
     "pluralName": "menu-pdfs",
-    "displayName": "menu_pdf"
+    "displayName": "menu_pdf",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "menu": {
+    "menu_fr": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "menu_en": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "menu_nl": {
       "allowedTypes": [
         "images",
         "files",

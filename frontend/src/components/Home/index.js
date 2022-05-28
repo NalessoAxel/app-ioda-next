@@ -37,7 +37,7 @@ const Home = ({ images }) => {
 
 	return (
 		<>
-			<Container id="home" data-scroll-section>
+			<Container id="home" data-scroll-section borderTop="1px solid black">
 				<AnimatePresence>
 					<motion.div
 						variants={container}

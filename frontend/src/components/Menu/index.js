@@ -2,26 +2,12 @@ import { Text, Flex, Button, Box, Image, Heading } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 import Container from '../Grid/Container';
 import axios from 'axios';
-import { I18nContext } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import { API_URL } from '../../Utils/urls';
 
-const Menu = ({ description }) => {
-	console.log(description.data[0].attributes.full_text);
-	const [menu, setMenu] = useState([]);
-
-	useEffect(() => {
-		async function getMenu() {
-			try {
-				const response = await axios.get(`${API_URL}
-			/api/menu-pdf?populate=*`);
-				setMenu(response.data.data.attributes.menu.data[0].attributes);
-			} catch (error) {
-				console.log(error);
-			}
-		}
-		getMenu();
-	}, []);
+const Menu = ({ description, menu, openingHours }) => {
+	const { t } = useTranslation();
 
 	return (
 		<Container
@@ -30,6 +16,7 @@ const Menu = ({ description }) => {
 			minH="calc(100vh - 115px -  62px)"
 			w="100vw"
 			name="menu"
+			borderTop="1px solid black"
 		>
 			<Flex
 				h="calc(100% - 115px -  62px)"
@@ -38,20 +25,19 @@ const Menu = ({ description }) => {
 				justifyContent="space-between"
 				width="100vw"
 			>
-				<Box bgColor="primary" />
 				<Flex
 					flexBasis={['0', '100%']}
 					h="100%"
 					position="relative"
 					alignItems="center"
-					w={['100%']}
+					// w="408px"
 				>
 					<Text
 						color="black"
-						fontSize={['1.75rem']}
+						fontSize={['1.3125em']}
 						w="100%"
 						whiteSpace="normal"
-						px="50px"
+						px="150px"
 					>
 						{description.data[0].attributes.full_text}
 					</Text>
@@ -61,7 +47,7 @@ const Menu = ({ description }) => {
 					flexBasis={['100%']}
 					flexDirection="column"
 					alignItems="center"
-					pt="101px"
+					pt="108px"
 					h="100%"
 					position="relative"
 					_before={{
@@ -71,7 +57,6 @@ const Menu = ({ description }) => {
 						height: [' 273%', '531px'],
 						top: 'calc(50% - 531px / 2)',
 						position: 'absolute',
-
 						transform: ['rotate(90deg)', 'rotate(0deg)'],
 						left: '0px',
 						background: 'black',
@@ -79,35 +64,49 @@ const Menu = ({ description }) => {
 				>
 					<Image src="./MENU.svg" w="270px" height="70px" />
 
-					<Text fontSize="1rem">
-						<a
-							href={API_URL + menu.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							FRANCAIS
-						</a>
-					</Text>
+					<Flex
+						flexDirection="column"
+						alignItems="center"
+						pt="96px"
+						minH="240px"
+						justifyContent="space-between"
+					>
+						<Text fontSize="1rem">
+							<a
+								href={
+									API_URL + menu.data.attributes.menu_fr.data[0].attributes.url
+								}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								FRANCAIS
+							</a>
+						</Text>
 
-					<Text fontSize="1rem">
-						<a
-							href={API_URL + menu.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							ANGLAIS
-						</a>
-					</Text>
+						<Text fontSize="1rem">
+							<a
+								href={
+									API_URL + menu.data.attributes.menu_en.data[0].attributes.url
+								}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								ANGLAIS
+							</a>
+						</Text>
 
-					<Text fontSize="1rem">
-						<a
-							href={API_URL + menu.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							NEDERLANDS
-						</a>
-					</Text>
+						<Text fontSize="1rem">
+							<a
+								href={
+									API_URL + menu.data.attributes.menu_nl.data[0].attributes.url
+								}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								NEDERLANDS
+							</a>
+						</Text>
+					</Flex>
 				</Flex>
 
 				<Flex
@@ -131,9 +130,67 @@ const Menu = ({ description }) => {
 					}}
 				>
 					<Heading as="h2" fontSize="1.5rem" fontWeight="bold">
-						HORAIRES D'OUVERTURE
+						{openingHours.data[0].attributes.opening_hour_title}
 					</Heading>
-					<Text color="black" fontSize={['1.75rem']} whiteSpace="normal"></Text>
+					<Flex
+						flexDirection="column"
+						alignItems="center"
+						pt="96px"
+						justifyContent="space-between"
+						minHeight="219px"
+					>
+						<Flex flexDirection="column" alignItems="center">
+							<Text
+								color="black"
+								fontSize="1.5rem"
+								whiteSpace="normal"
+								textTransform="uppercase"
+							>
+								{openingHours.data[0].attributes.openingHour[0].title}
+							</Text>
+							<Text color="black" fontSize="1rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[0].days}
+							</Text>
+							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[0].hours}
+							</Text>
+						</Flex>
+
+						<Flex flexDirection="column" alignItems="center">
+							<Text
+								color="black"
+								fontSize="1.5rem"
+								whiteSpace="normal"
+								textTransform="uppercase"
+							>
+								{openingHours.data[0].attributes.openingHour[1].title}
+							</Text>
+							<Text color="black" fontSize="1rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[1].days}
+							</Text>
+							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[1].hours}
+							</Text>
+						</Flex>
+
+						<Flex flexDirection="column" alignItems="center">
+							<Text color="black" fontSize="1rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[2].title}
+							</Text>
+							<Text color="black" fontSize="1rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[2].days}
+							</Text>
+							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.openingHour[2].hours}
+							</Text>
+						</Flex>
+
+						<Flex flexDirection="column" alignItems="center" px="64px">
+							<Text color="black" fontSize="1rem" whiteSpace="normal">
+								{openingHours.data[0].attributes.infos_reservations}
+							</Text>
+						</Flex>
+					</Flex>
 				</Flex>
 			</Flex>
 		</Container>

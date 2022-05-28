@@ -12,6 +12,7 @@ const Contact = () => {
 			zIndex="10"
 			position="relative"
 			bgColor="white"
+			borderTop="1px solid black"
 		>
 			<Flex
 				w="100%"

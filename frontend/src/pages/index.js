@@ -20,8 +20,16 @@ import 'locomotive-scroll/dist/locomotive-scroll.css';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-function App({ images, marquee, locale, description, aboutText }) {
-	console.log(description);
+function App({
+	images,
+	marquee,
+	locale,
+	description,
+	aboutText,
+	menu,
+	openingData,
+}) {
+	console.log('horraires:', openingData);
 	const router = useRouter();
 
 	const { t } = useTranslation('translation');
@@ -50,7 +58,11 @@ function App({ images, marquee, locale, description, aboutText }) {
 				<main data-scroll-container ref={container}>
 					<Home images={images} />
 
-					<Menu description={description} />
+					<Menu
+						description={description}
+						menu={menu}
+						openingHours={openingData}
+					/>
 
 					<Reservations />
 
@@ -80,18 +92,29 @@ export async function getServerSideProps({ locale }) {
 
 	const { data } = (await marquee_res.json()) || null;
 
+	const menuRes = await fetch(`${API_URL}/api/menu-pdf?populate=*`);
+
+	const menu = await menuRes.json();
+
 	const descriptionRes = await fetch(
 		`${API_URL}/api/restaurant-descriptions?populate=*&locale=${locale}`
 	);
 
 	const descriptionData = (await descriptionRes.json()) || null;
 
+	const openingRes = await fetch(
+		`${API_URL}/api/opening-hours?populate=*&locale=${locale}`
+	);
+
+	const openingData = (await openingRes.json()) || null;
+
+	console.log('openingData:', openingData);
+
 	const aboutRes = await fetch(
 		`${API_URL}/api/about-texts?populate=*&locale=${locale}`
 	);
 
 	const aboutData = (await aboutRes.json()) || null;
-	console.log(aboutData);
 
 	return {
 		props: {
@@ -99,6 +122,8 @@ export async function getServerSideProps({ locale }) {
 			marquee: data[0],
 			description: descriptionData,
 			aboutText: aboutData,
+			menu,
+			openingData,
 			...(await serverSideTranslations(locale, ['common'])),
 		},
 	};

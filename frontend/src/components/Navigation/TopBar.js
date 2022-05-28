@@ -7,15 +7,13 @@ import Marquee from 'react-fast-marquee';
 import Col from '../Grid/Col';
 import Container from '../Grid/Container';
 
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const TopBar = ({ marquee }) => {
-	console.log(marquee);
 	const router = useRouter();
 	const bottomBar = useRef();
-
-	const { i18n } = useTranslation();
 
 	return (
 		<Container
@@ -38,13 +36,16 @@ const TopBar = ({ marquee }) => {
 						</Text>
 					</Marquee>
 				</Flex>
+
 				<Flex alignItems="center" justifyContent="space-between">
 					<Image
 						src="/logo.svg"
 						alt="logo"
-						h={['30px', '89px']}
+						h={['30px', '88px']}
+						w="219px"
 						objectFit="cover"
 						objectPosition="center"
+						mb="14px"
 					/>
 
 					<Flex justifyContent="flex-end" h="100%" alignItems="center">

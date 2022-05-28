@@ -5,7 +5,12 @@ import Container from '../Grid/Container';
 
 const Footer = () => {
 	return (
-		<Container minH="calc(100vh - 115px -  62px)" w="25vw" data-scroll-section>
+		<Container
+			minH="calc(100vh - 115px -  62px)"
+			w="25vw"
+			data-scroll-section
+			borderTop="1px solid black"
+		>
 			<Flex
 				minH="calc(100vh - 115px -  62px)"
 				justifyContent="center"
