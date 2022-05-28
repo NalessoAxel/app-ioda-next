@@ -23,9 +23,7 @@ const Reservations = () => {
 					display: 'block',
 					width: '2px',
 					height: [' 273%', '531px'],
-
 					position: 'absolute',
-
 					transform: ['rotate(90deg)', 'rotate(0deg)'],
 					left: '0px',
 					background: 'black',
@@ -37,6 +35,7 @@ const Reservations = () => {
 					h="100%"
 					alignItems="center"
 					justifyContent="center"
+					pb="80px"
 				>
 					<Box zIndex="100">
 						<tbkr-bm-widget
@@ -51,7 +50,8 @@ const Reservations = () => {
 						<Image
 							src="eric_menu.svg"
 							position="absolute"
-							top="505"
+							bgColor="body"
+							top={['389px', '505px']}
 							left="5"
 							zIndex="10"
 						/>

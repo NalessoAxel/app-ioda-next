@@ -35,7 +35,6 @@ const About = ({ aboutText }) => {
 					py="98px"
 					pl="56px"
 					pr="52px"
-					h="100%"
 					_after={{
 						content: '" "',
 						display: 'block',

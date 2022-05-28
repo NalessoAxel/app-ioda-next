@@ -2,7 +2,8 @@ import { Text, Flex, Image } from '@chakra-ui/react';
 import React from 'react';
 import Container from '../Grid/Container';
 
-const Contact = () => {
+const Contact = ({ contact }) => {
+	console.log(contact);
 	return (
 		<Container
 			id="contact"
@@ -16,9 +17,11 @@ const Contact = () => {
 		>
 			<Flex
 				w="100%"
-				minH="calc(100vh - 115px - 62px)"
+				h="611px"
 				pt="121px"
-				justifyContent="center"
+				justifyContent="space-between"
+				alignItems="center"
+				flexDirection="column"
 				_after={{
 					content: '" "',
 					display: 'block',
@@ -33,6 +36,14 @@ const Contact = () => {
 				}}
 			>
 				<Image src="map_ioda.png" h="281px" w="334px" />
+
+				<Flex flexDirection="column" alignItems="center">
+					<Text>{contact.data.attributes.adress}</Text>
+
+					<Text>{contact.data.attributes.email}</Text>
+
+					<Text>{contact.data.attributes.tel}</Text>
+				</Flex>
 			</Flex>
 		</Container>
 	);

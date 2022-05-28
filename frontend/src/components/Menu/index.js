@@ -8,7 +8,6 @@ import { API_URL } from '../../Utils/urls';
 
 
 const Menu = ({ description, menu, openingHours }) => {
-	console.log('menu:', menu);
 	const { t } = useTranslation();
 
 	return (
@@ -40,7 +39,7 @@ const Menu = ({ description, menu, openingHours }) => {
 						fontSize={['1.3125em']}
 						w="100%"
 						whiteSpace="normal"
-						px={['50px', null, null, null, '150px']}
+						px={['50px', null, null, null, '50px', '150px']}
 					>
 						{description.data[0].attributes.full_text}
 					</Text>
@@ -71,7 +70,7 @@ const Menu = ({ description, menu, openingHours }) => {
 						flexDirection="column"
 						alignItems="center"
 						pt="96px"
-						minH="440px"
+						minH="410px"
 						justifyContent="space-between"
 					>
 						<Text fontSize="1rem">
@@ -136,9 +135,15 @@ const Menu = ({ description, menu, openingHours }) => {
 						background: 'black',
 					}}
 				>
-					<Heading as="h2" fontSize="1.5rem" fontWeight="bold">
+					<Heading
+						as="h2"
+						fontSize="1.5rem"
+						fontWeight="300"
+						textTransform="uppercase"
+					>
 						{openingHours.data[0].attributes.opening_hour_title}
 					</Heading>
+
 					<Flex
 						flexDirection="column"
 						alignItems="center"

@@ -28,8 +28,8 @@ function App({
 	aboutText,
 	menu,
 	openingData,
+	contactData,
 }) {
-	console.log('horraires:', openingData);
 	const router = useRouter();
 
 	const { t } = useTranslation('translation');
@@ -68,7 +68,7 @@ function App({
 
 					<About aboutText={aboutText} />
 
-					<Contact />
+					<Contact contact={contactData} />
 
 					<Footer />
 				</main>
@@ -116,6 +116,13 @@ export async function getServerSideProps({ locale }) {
 
 	const aboutData = (await aboutRes.json()) || null;
 
+	const contactRes = await fetch(
+		`${API_URL}
+		/api/contact-section?populate=*&locale=${locale}`
+	);
+
+	const contactData = (await contactRes.json()) || null;
+
 	return {
 		props: {
 			images,
@@ -124,7 +131,7 @@ export async function getServerSideProps({ locale }) {
 			aboutText: aboutData,
 			menu,
 			openingData,
-
+			contactData,
 			...(await serverSideTranslations(locale, ['common'])),
 		},
 	};
