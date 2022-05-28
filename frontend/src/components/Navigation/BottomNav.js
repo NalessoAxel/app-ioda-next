@@ -81,7 +81,7 @@ const BottomNav = () => {
 	const reservationRef = useRef();
 
 	const navBarItem = [
-		{ name: t('home'), id: '#home', tab: 'tab 1', ref: homeRef },
+		// { name: t('home'), id: '#home', tab: 'tab 1', ref: homeRef },
 		{ name: t('menu'), id: '#menu', tab: 'tab 2', ref: menuRef },
 		{
 			name: t('reservations'),

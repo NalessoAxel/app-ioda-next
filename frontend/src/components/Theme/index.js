@@ -23,6 +23,7 @@ breakpoints.xxl = '1440px';
 // ? https://chakra-ui.com/docs/theming/theme#colors
 const colors = {
 	primary: '#EDD372',
+	body: '#FAF9F1',
 };
 
 // ? https://chakra-ui.com/docs/theming/theme#spacing
@@ -53,6 +54,7 @@ const theme = extendTheme({
 	styles: {
 		body: {
 			position: 'static',
+			backgroundColor: '#FAF9F1',
 		},
 		'.c-scrollbar': {
 			zIndex: 1200,

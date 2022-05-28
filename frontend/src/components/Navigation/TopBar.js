@@ -23,7 +23,7 @@ const TopBar = ({ marquee }) => {
 			top="0"
 			right="0"
 			zIndex="100"
-			bgColor="white"
+			bgColor="body"
 		>
 			<Col colStart={2} colEnd={26}>
 				<Flex w={['100%']}>

@@ -21,7 +21,7 @@ const ScrollIndicator = () => {
 		<Flex
 			h="8px"
 			w="100%"
-			bg="white"
+			bgColor="body"
 			position="sticky"
 			top="0"
 			left="0"

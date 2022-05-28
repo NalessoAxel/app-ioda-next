@@ -11,6 +11,7 @@ const Reservations = () => {
 			minH="calc(100vh - 115px -  62px)"
 			minWidth="33vw"
 			borderTop="1px solid black"
+			bgColor="body"
 		>
 			<Flex
 				justifyContent="center"

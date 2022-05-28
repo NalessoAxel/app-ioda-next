@@ -11,7 +11,7 @@ const Contact = () => {
 			minW="470px"
 			zIndex="10"
 			position="relative"
-			bgColor="white"
+			bgColor="body"
 			borderTop="1px solid black"
 		>
 			<Flex

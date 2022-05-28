@@ -92,7 +92,9 @@ export async function getServerSideProps({ locale }) {
 
 	const { data } = (await marquee_res.json()) || null;
 
-	const menuRes = await fetch(`${API_URL}/api/menu-pdf?populate=*`);
+	const menuRes = await fetch(
+		`${API_URL}/api/menu-pdf?populate=*&locale=${locale}`
+	);
 
 	const menu = await menuRes.json();
 
@@ -108,8 +110,6 @@ export async function getServerSideProps({ locale }) {
 
 	const openingData = (await openingRes.json()) || null;
 
-	console.log('openingData:', openingData);
-
 	const aboutRes = await fetch(
 		`${API_URL}/api/about-texts?populate=*&locale=${locale}`
 	);
@@ -124,6 +124,7 @@ export async function getServerSideProps({ locale }) {
 			aboutText: aboutData,
 			menu,
 			openingData,
+
 			...(await serverSideTranslations(locale, ['common'])),
 		},
 	};

@@ -6,7 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 import { API_URL } from '../../Utils/urls';
 
+
 const Menu = ({ description, menu, openingHours }) => {
+	console.log('menu:', menu);
 	const { t } = useTranslation();
 
 	return (
@@ -17,6 +19,7 @@ const Menu = ({ description, menu, openingHours }) => {
 			w="100vw"
 			name="menu"
 			borderTop="1px solid black"
+			bgColor="body"
 		>
 			<Flex
 				h="calc(100% - 115px -  62px)"
@@ -68,7 +71,7 @@ const Menu = ({ description, menu, openingHours }) => {
 						flexDirection="column"
 						alignItems="center"
 						pt="96px"
-						minH="240px"
+						minH="440px"
 						justifyContent="space-between"
 					>
 						<Text fontSize="1rem">
@@ -105,6 +108,10 @@ const Menu = ({ description, menu, openingHours }) => {
 							>
 								NEDERLANDS
 							</a>
+						</Text>
+
+						<Text color="black" fontSize="1rem" whiteSpace="normal">
+							{menu.data.attributes.menu_explanations}
 						</Text>
 					</Flex>
 				</Flex>
@@ -148,9 +155,11 @@ const Menu = ({ description, menu, openingHours }) => {
 							>
 								{openingHours.data[0].attributes.openingHour[0].title}
 							</Text>
+
 							<Text color="black" fontSize="1rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[0].days}
 							</Text>
+
 							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[0].hours}
 							</Text>
@@ -162,30 +171,46 @@ const Menu = ({ description, menu, openingHours }) => {
 								fontSize="1.5rem"
 								whiteSpace="normal"
 								textTransform="uppercase"
+								pt="24px"
 							>
 								{openingHours.data[0].attributes.openingHour[1].title}
 							</Text>
+
 							<Text color="black" fontSize="1rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[1].days}
 							</Text>
+
 							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[1].hours}
 							</Text>
 						</Flex>
 
 						<Flex flexDirection="column" alignItems="center">
-							<Text color="black" fontSize="1rem" whiteSpace="normal">
+							<Text
+								color="black"
+								fontSize="1.5rem"
+								whiteSpace="normal"
+								textTransform="uppercase"
+								pt="24px"
+							>
 								{openingHours.data[0].attributes.openingHour[2].title}
 							</Text>
+
 							<Text color="black" fontSize="1rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[2].days}
 							</Text>
+
 							<Text color="black" fontSize="0.9rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.openingHour[2].hours}
 							</Text>
 						</Flex>
 
-						<Flex flexDirection="column" alignItems="center" px="64px">
+						<Flex
+							flexDirection="column"
+							alignItems="center"
+							px="130px"
+							py="36px"
+						>
 							<Text color="black" fontSize="1rem" whiteSpace="normal">
 								{openingHours.data[0].attributes.infos_reservations}
 							</Text>

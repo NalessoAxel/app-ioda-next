@@ -10,16 +10,12 @@ const About = ({ aboutText }) => {
 			data-scroll-section
 			minH="calc(100vh - 115px -  62px)"
 			w="75vw"
-			bgColor="white"
 			zIndex="100"
 			position="relative"
 			borderTop="1px solid black"
+			bgColor="body"
 		>
-			<Flex
-				minH="calc(100vh - 115px - 62px)"
-				bgColor="white"
-				justifyContent="center"
-			>
+			<Flex minH="calc(100vh - 115px - 62px)" justifyContent="center">
 				<Flex minW="50%" h="auto">
 					<Image
 						src="cesar.png"
@@ -36,7 +32,6 @@ const About = ({ aboutText }) => {
 					flexDir="column"
 					alignItems="center"
 					justifyContent="center"
-					bgColor="white"
 					py="98px"
 					pl="56px"
 					pr="52px"
