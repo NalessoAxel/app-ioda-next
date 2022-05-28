@@ -60,7 +60,7 @@ const Home = ({ images }) => {
 									<ImageBlock
 										src={
 											API_URL +
-											images.data[2].attributes.images.data[0].attributes.url
+											images.data[0].attributes.images.data[0].attributes.url
 										}
 										alt="ioda"
 										variants={item}
@@ -82,7 +82,7 @@ const Home = ({ images }) => {
 									<ImageBlock
 										src={
 											API_URL +
-											images.data[0].attributes.images.data[0].attributes.url
+											images.data[2].attributes.images.data[0].attributes.url
 										}
 										alt="ioda"
 										variants={item}
