@@ -23,7 +23,6 @@ const About = ({ aboutText }) => {
 						h="calc(100vh - 115px - 62px)"
 						objectFit="contain"
 						objectPosition="center"
-						flexGrow="2"
 					/>
 				</Flex>
 

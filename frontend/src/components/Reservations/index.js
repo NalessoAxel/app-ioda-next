@@ -48,10 +48,10 @@ const Reservations = () => {
 					</Box>
 					<Box>
 						<Image
-							src="eric_menu.svg"
+							src="Eric_pancarte.svg"
 							position="absolute"
 							bgColor="body"
-							top={['389px', '505px']}
+							top={['420px']}
 							left="5"
 							zIndex="10"
 						/>
