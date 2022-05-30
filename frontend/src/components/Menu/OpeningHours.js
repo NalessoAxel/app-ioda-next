@@ -1,7 +1,7 @@
 import { Text, Flex, useMediaQuery, Heading, Box } from '@chakra-ui/react';
 
 const OpeningHours = ({ openingHours }) => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
 
 	return (
 		<>

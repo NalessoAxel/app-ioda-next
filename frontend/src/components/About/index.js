@@ -3,11 +3,12 @@ import React from 'react';
 import Container from '../Grid/Container';
 
 const About = ({ aboutText }) => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
+	const [isLargerThanMobile] = useMediaQuery('(min-width: 320px )');
 
 	return (
 		<>
-			{isLargerThanTablet ? 
+			{isLargerThanTablet && isLargerThanMobile ? 
 		<Container
 			display={["flex", "grid"]}
 			id="about"

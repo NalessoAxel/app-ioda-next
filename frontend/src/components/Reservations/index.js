@@ -4,7 +4,7 @@ import { Flex, Text, Box, Image, useMediaQuery } from '@chakra-ui/react';
 import Container from '../Grid/Container';
 
 const Reservations = () => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
 	return (
 		<>
 			{isLargerThanTablet ? 
@@ -85,7 +85,7 @@ const Reservations = () => {
 				<Flex  alignItems="center" justifyContent="center" w="100%">
 					<Box w='100%' h="1px" bgColor="black" mb="24px" />
 				</Flex>
-				
+
 				<Flex
 					flexDirection="column"
 					position="relative"

@@ -3,10 +3,12 @@ import React from 'react';
 import Container from '../Grid/Container';
 
 const Contact = ({ contact }) => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
+
+	
 	return (
 		<>
-			{isLargerThanTablet ? 
+			{isLargerThanTablet  ? 
 		<Container
 			display={['flex', 'grid']}
 			id="contact"

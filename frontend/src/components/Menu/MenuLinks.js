@@ -3,7 +3,7 @@ import { Text, Flex, Image, useMediaQuery, Box } from '@chakra-ui/react';
 import { API_URL } from '../../Utils/urls';
 
 const MenuLinks = ({ menu }) => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
 
 	return (
 		<>
