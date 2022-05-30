@@ -1,14 +1,17 @@
-import { Text, Flex, Image } from '@chakra-ui/react';
+import { Text, Flex, Image, Box, useMediaQuery } from '@chakra-ui/react';
 import React from 'react';
 import Container from '../Grid/Container';
 
 const Contact = ({ contact }) => {
-	console.log(contact);
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
 	return (
+		<>
+			{isLargerThanTablet ? 
 		<Container
+			display={['flex', 'grid']}
 			id="contact"
 			data-scroll-section
-			minH="calc(100vh - 115px -  62px)"
+			minH="calc(100vh - 124px -  61px)"
 			minW="470px"
 			zIndex="10"
 			position="relative"
@@ -21,7 +24,7 @@ const Contact = ({ contact }) => {
 				pt="121px"
 				justifyContent="space-between"
 				alignItems="center"
-				flexDirection="column"
+				flexDirection={['column', 'row']}
 				_after={{
 					content: '" "',
 					display: 'block',
@@ -29,7 +32,6 @@ const Contact = ({ contact }) => {
 					height: [' 273%', '531px'],
 					top: 'calc(40% - 531px / 2)',
 					position: 'absolute',
-
 					transform: ['rotate(90deg)', 'rotate(0deg)'],
 					right: '0',
 					background: 'black',
@@ -46,6 +48,42 @@ const Contact = ({ contact }) => {
 				</Flex>
 			</Flex>
 		</Container>
+		:
+		<Container
+		display={['flex', 'grid']}
+		id="contact"
+		data-scroll-section
+		zIndex="10"
+		position="relative"
+		bgColor="body"	
+		flexDirection="column"	
+		>
+			<Flex  alignItems="center" justifyContent="center" w="100%">
+					<Box w='80%' h="1px" bgColor="black" mb="24px" />
+			</Flex>
+
+		<Flex
+			w="100%"
+			h="100%"
+			justifyContent="flex-start"
+			alignItems="center"
+			flexDirection={['column', 'row']}
+		>
+				
+
+			<Image src="map_ioda.png" />
+
+			<Flex flexDirection="column" alignItems="center" pt="24px">
+				<Text>{contact.data.attributes.adress}</Text>
+
+				<Text>{contact.data.attributes.email}</Text>
+
+				<Text>{contact.data.attributes.tel}</Text>
+			</Flex>
+		</Flex>
+	</Container>
+}
+		</>
 	);
 };
 

@@ -4,7 +4,7 @@ import Container from '../Grid/Container';
 
 import { useTranslation } from 'react-i18next';
 
-import RestaurtantDescriptions from './RestaurtantDescriptions';
+import RestaurantDescriptions from './RestaurantDescriptions';
 import MenuLinks from './MenuLinks';
 import OpeningHours from './OpeningHours';
 
@@ -13,22 +13,23 @@ const Menu = ({ description, menu, openingHours }) => {
 
 	return (
 		<Container
+			display={["flex", "grid"]}
 			id="menu"
 			data-scroll-section
-			minH="calc(100vh - 115px -  62px)"
-			w="100vw"
+			h={["100%", "calc(100vh - 124px -  61px)"]}
+			w={["100vw","1184px"]}
 			name="menu"
-			borderTop="1px solid black"
+			borderTop={["none", "1px solid black"]}
 			bgColor="body"
 		>
 			<Flex
-				h="calc(100% - 115px -  62px)"
+				h={["100%", "calc(100vh - 124px -  61px)"]}
 				flexDirection={['column', 'row']}
 				alignItems="center"
-				justifyContent="space-between"
-				width="100vw"
+				// justifyContent="space-between"
+				
 			>
-				<RestaurtantDescriptions description={description} />
+				<RestaurantDescriptions description={description} />
 
 				<MenuLinks menu={menu} />
 

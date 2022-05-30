@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee';
 
 import Col from '../Grid/Col';
 import Container from '../Grid/Container';
-
+import FullscreenMenu from './FullscreenMenu';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -17,16 +17,16 @@ const TopBar = ({ marquee }) => {
 
 	return (
 		<Container
-			maxH="117px"
+			maxH="124px"
 			ref={bottomBar}
 			position="sticky"
 			top="0"
 			right="0"
-			zIndex="100"
+			zIndex="400"
 			bgColor="body"
 		>
 			<Col colStart={2} colEnd={26}>
-				<Flex w={['100%']}>
+				{/* <Flex w={['100%']}>
 					<Marquee gradientColor="false" speed="20" pauseOnHover="true">
 						<Text fontSize={['1.25rem']}>
 							{marquee.attributes.event_banner}
@@ -35,20 +35,20 @@ const TopBar = ({ marquee }) => {
 							{marquee.attributes.event_banner}
 						</Text>
 					</Marquee>
-				</Flex>
+				</Flex> */}
 
-				<Flex alignItems="center" justifyContent="space-between">
+				<Flex alignItems="center" justifyContent="space-between" py="8px" w="100%">
 					<Image
 						src="/logo.svg"
 						alt="logo"
-						h={['30px', '88px']}
-						w="219px"
+						h={['40px', '88px']}
+						w={["auto", "219px"]}
 						objectFit="cover"
 						objectPosition="center"
-						mb="14px"
+						mb={["0", "14px"]}
 					/>
 
-					<Flex justifyContent="flex-end" h="100%" alignItems="center">
+					<Flex display={["none", "flex"]} justifyContent="flex-end" h="100%" alignItems="center">
 						<Link href="/" locale={router.locale === 'fr-BE' ? 'en' : 'fr-BE'}>
 							<Button
 								variant="primary"
@@ -92,6 +92,17 @@ const TopBar = ({ marquee }) => {
 								EN
 							</Button>
 						</Link>
+					</Flex>
+
+					<Flex
+							display={['flex', 'none']}
+							alignItems="center"
+							justifyContent="flex-end"
+							h="100%"
+							w="100%"
+							bgColor="body"
+							>
+						<FullscreenMenu />
 					</Flex>
 				</Flex>
 			</Col>

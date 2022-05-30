@@ -1,15 +1,19 @@
 import React from 'react';
-import { Flex, Text, Box, Image } from '@chakra-ui/react';
+import { Flex, Text, Box, Image, useMediaQuery } from '@chakra-ui/react';
 
 import Container from '../Grid/Container';
 
 const Reservations = () => {
+	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px)');
 	return (
+		<>
+			{isLargerThanTablet ? 
 		<Container
+			display={["flex", "grid"]}
 			id="reservations"
 			data-scroll-section
-			minH="calc(100vh - 115px -  62px)"
-			minWidth="33vw"
+			minH="calc(100vh - 124px -  61px)"
+			minW='482px'
 			borderTop="1px solid black"
 			bgColor="body"
 		>
@@ -17,7 +21,7 @@ const Reservations = () => {
 				justifyContent="center"
 				alignItems="center"
 				flexDirection={['column', 'row']}
-				height="calc(100vh - 115px -  62px)"
+				height="calc(100vh - 124px -  61px)"
 				_before={{
 					content: '" "',
 					display: 'block',
@@ -59,6 +63,60 @@ const Reservations = () => {
 				</Flex>
 			</Flex>
 		</Container>
+		:
+		
+		<Container
+			display={["flex", "grid"]}
+			id="reservations"
+			data-scroll-section
+			h="100%"
+			alignItems="center"
+			justifyContent="center"
+			bgColor="body"
+		>
+			
+
+			<Flex
+				justifyContent="center"
+				alignItems="center"
+				flexDirection={['column', 'row']}
+				
+			>
+				<Flex  alignItems="center" justifyContent="center" w="100%">
+					<Box w='100%' h="1px" bgColor="black" mb="24px" />
+				</Flex>
+				
+				<Flex
+					flexDirection="column"
+					position="relative"
+					h="100%"
+					alignItems="center"
+					justifyContent="center"
+				>
+					<Box zIndex="100">
+						<tbkr-bm-widget
+							restaurant-id="53608480"
+							source="website"
+							use-modal="0"
+							lang="fr"
+							theme="light"
+						></tbkr-bm-widget>
+					</Box>
+					<Box pb="260px">
+						<Image
+							src="Eric_pancarte.svg"
+							position="absolute"
+							bgColor="body"
+							top="257px"
+							left="5"
+							zIndex="10"
+						/>
+					</Box>
+				</Flex>
+			</Flex>
+		</Container>
+			}
+		</>
 	);
 };
 

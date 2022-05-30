@@ -136,10 +136,10 @@ const BottomNav = () => {
 	return (
 		<>
 			<Container
-				maxH="62px"
+				maxH="61px"
 				bgColor="primary"
 				w={['100vw', '100%']}
-				position={['fixed']}
+				position={['sticky', 'fixed']}
 				bottom={['0']}
 			>
 				<Col colStart={2} colEnd={26}>

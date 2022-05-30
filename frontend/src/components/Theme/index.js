@@ -19,6 +19,7 @@ breakpoints.md = '768px';
 breakpoints.lg = '992px';
 breakpoints.xl = '1200px';
 breakpoints.xxl = '1440px';
+breakpoints.xxxl = '1600px';
 
 // ? https://chakra-ui.com/docs/theming/theme#colors
 const colors = {

@@ -2,14 +2,17 @@ import { Flex, List, ListItem, useDisclosure, Button } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 import { useRef } from 'react';
 
+
 import { useTranslation } from 'react-i18next';
 import { useLocomotiveScroll } from 'react-locomotive-scroll';
 
 import Drawer from './Drawer';
 
+
 const FullscreenMenu = () => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const btnRef = useRef();
+	
 
 	const { scroll } = useLocomotiveScroll();
 
@@ -25,7 +28,7 @@ const FullscreenMenu = () => {
 	};
 
 	const navBarItem = [
-		{ name: t('home'), id: '#home' },
+		
 		{ name: t('menu'), id: '#menu' },
 		{ name: t('reservations'), id: '#reservations' },
 		{ name: t('about'), id: '#about' },
@@ -34,14 +37,14 @@ const FullscreenMenu = () => {
 
 	return (
 		<Flex
-			bgColor="primary"
-			justifyContent="flex-end"
-			alignItems="center"
-			w="100vw"
-			h="62px"
+			// bgColor="primary"
+			// justifyContent="flex-end"
+			// alignItems="center"
+			// w="100vw"
+			// h="62px"
 		>
-			<Button ref={btnRef} onClick={onOpen}>
-				<HamburgerIcon />
+			<Button ref={btnRef} onClick={onOpen} bgColor="body" >
+				<HamburgerIcon w={8} h={8} />
 			</Button>
 
 			<Drawer isOpen={isOpen} onClose={onClose} finalFocusRef={btnRef}>
@@ -49,7 +52,7 @@ const FullscreenMenu = () => {
 					as={List}
 					variant="primary"
 					flexDirection="row"
-					alignItems="center"
+					alignItems="flex-start"
 					h="100%"
 					w="100%"
 				>
@@ -67,6 +70,7 @@ const FullscreenMenu = () => {
 							{item.name}
 						</ListItem>
 					))}
+					
 				</Flex>
 			</Drawer>
 		</Flex>

@@ -55,7 +55,7 @@ const Home = ({ images }) => {
 							justifyContent="space-between"
 							flexDir={['column', 'row']}
 							w="100vw"
-							minH="calc(100vh - 115px -  62px)"
+							minH="calc(100vh - 124px -  61px)"
 						>
 							{/* {isLoading ? (
 								<Text>Loading...</Text>
