@@ -8,8 +8,8 @@ const OpeningHours = ({ openingHours }) => {
 		{isLargerThanTablet ? 
 		
 		<Flex
-			flexDirection={['column', 'row']}
 			alignItems="center"
+			flexDirection="column"
 			pt="60px"
 			maxW="394px"
 			h="531px"

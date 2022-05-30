@@ -22,9 +22,9 @@ const Contact = ({ contact }) => {
 				w="100%"
 				h="611px"
 				pt="121px"
-				justifyContent="space-between"
+				
 				alignItems="center"
-				flexDirection={['column', 'row']}
+				flexDirection={['column']}
 				_after={{
 					content: '" "',
 					display: 'block',
@@ -39,7 +39,7 @@ const Contact = ({ contact }) => {
 			>
 				<Image src="map_ioda.png" h="281px" w="334px" />
 
-				<Flex flexDirection="column" alignItems="center">
+				<Flex flexDirection="column" alignItems="center" pt="36px">
 					<Text>{contact.data.attributes.adress}</Text>
 
 					<Text>{contact.data.attributes.email}</Text>

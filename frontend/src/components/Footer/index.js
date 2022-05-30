@@ -27,7 +27,7 @@ const Footer = () => {
 				bgColor="body"
 				pt={["24px", "0px"]}
 			>
-				<Flex alignItems="center" w="100%" justifyContent="center">
+				<Flex display={["flex", "none"]} alignItems="center" w="100%" justifyContent="center">
 					<Box w='80%' h="1px" bgColor="black" mb="24px" />
 				</Flex>
 
