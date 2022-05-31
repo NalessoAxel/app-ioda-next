@@ -6,7 +6,7 @@ import Marquee from 'react-fast-marquee';
 
 import Col from '../Grid/Col';
 import Container from '../Grid/Container';
-import FullscreenMenu from './FullscreenMenu';
+import FullscreenMenu from './FullScreenMenu';
 
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -24,6 +24,7 @@ const TopBar = ({ marquee }) => {
 			right="0"
 			zIndex="400"
 			bgColor="body"
+			borderBottom={["1px solid black", "none"]}
 		>
 			<Col colStart={2} colEnd={26}>
 				{/* <Flex w={['100%']}>

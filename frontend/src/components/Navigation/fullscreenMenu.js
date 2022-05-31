@@ -36,13 +36,7 @@ const FullscreenMenu = () => {
 	];
 
 	return (
-		<Flex
-			// bgColor="primary"
-			// justifyContent="flex-end"
-			// alignItems="center"
-			// w="100vw"
-			// h="62px"
-		>
+		<Flex>
 			<Button ref={btnRef} onClick={onOpen} bgColor="body" >
 				<HamburgerIcon w={8} h={8} />
 			</Button>

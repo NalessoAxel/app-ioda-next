@@ -40,7 +40,7 @@ const Home = ({ images }) => {
 			<Container
 				id="home"
 				data-scroll-section
-				borderTop="1px solid black"
+				borderTop={["none", "1px solid black"]}
 				bgColor="body"
 			>
 				<AnimatePresence>

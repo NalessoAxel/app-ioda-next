@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import Container from '../Grid/Container';
 import Col from '../Grid/Col';
 
-import FullscreenMenu from './fullscreenMenu';
+import FullscreenMenu from './FullScreenMenu';
 
 const slide1 = keyframes`
 	0%, 100% {

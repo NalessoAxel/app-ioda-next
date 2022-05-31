@@ -19,6 +19,7 @@ const ScrollIndicator = () => {
 
 	return (
 		<Flex
+			display={['none', 'flex']}
 			h="8px"
 			w="100%"
 			bgColor="body"

@@ -1,42 +1,36 @@
-import { Text, Flex, Image, useMediaQuery, Box } from '@chakra-ui/react';
+import { Text, Flex, Image, Box } from '@chakra-ui/react';
 
 import { API_URL } from '../../Utils/urls';
 
 const MenuLinks = ({ menu }) => {
-	const [isLargerThanTablet] = useMediaQuery('(min-width: 768px )');
+	
 
 	return (
-		<>
-			{isLargerThanTablet ? 
-			<Flex
-				flexDirection="column"
-				alignItems="center"
-				pt="108px"
-				minW='384px'
-				h="100%"
-				position="relative"
-				_before={{
-					content: '" "',
-					display: 'block',
-					width: '1px',
-					height: [' 273%', '531px'],
-					top: 'calc(50% - 531px / 2)',
-					position: 'absolute',
-					transform: ['rotate(90deg)', 'rotate(0deg)'],
-					left: '0px',
-					background: 'black',
-				}}
-			>
-				<Image src="./MENU.svg" w="270px" height="70px" />
+		<Flex h="100%" flexDirection={["column", "row"]} w="100%" alignItems={['center']}>
+			<Flex alignItems="center" w={["100%", "auto"]} h={["1px", "100%"]} justifyContent="center">
+				<Box w={['80%', '1px']} h={["1px", "531px"]} bgColor="black" mb={["24px", "0"]} />
+			</Flex>
+		<Flex
+			flexDirection="column"
+			alignItems="center"
+			justifyContent="space-between"
+			padding={[ "24px", "0"]}
+			pt={["24px"]}
+			w={["100%", "384px"]}
+			h={["100%", "531px"]}>
+
+				<Image src="./MENU.svg" w="270px" height="77px" />
 
 				<Flex
 					flexDirection="column"
 					alignItems="center"
-					pt="96px"
-					minH="410px"
-					justifyContent="space-between"
+					justifyContent={["space-between", "space-evenly"]}
+					padding={[ "24px"]}
+					pt={["36px", "24px"]}
+					pb={["36px", "0"]}
+					h="100%"
 				>
-					<Text fontSize="1rem">
+					<Text fontSize="1rem" pb={[ "24px"]}>
 						<a
 							href={
 								API_URL + menu.data.attributes.menu_fr.data[0].attributes.url
@@ -48,7 +42,7 @@ const MenuLinks = ({ menu }) => {
 						</a>
 					</Text>
 
-					<Text fontSize="1rem">
+					<Text fontSize="1rem" pb={["24px"]}>
 						<a
 							href={
 								API_URL + menu.data.attributes.menu_en.data[0].attributes.url
@@ -60,7 +54,7 @@ const MenuLinks = ({ menu }) => {
 						</a>
 					</Text>
 
-					<Text fontSize="1rem">
+					<Text fontSize="1rem" pb={[ "24px"]}>
 						<a
 							href={
 								API_URL + menu.data.attributes.menu_nl.data[0].attributes.url
@@ -72,73 +66,15 @@ const MenuLinks = ({ menu }) => {
 						</a>
 					</Text>
 
-					<Text color="black" fontSize="1rem" whiteSpace="normal">
-						{menu.data.attributes.menu_explanations}
-					</Text>
+				</Flex>
+
+					<Flex pb={["36px", "0px"]}>
+						<Text color="black" fontSize="1rem" whiteSpace="normal">
+							{menu.data.attributes.menu_explanations}
+						</Text>
+					</Flex>
 				</Flex>
 			</Flex>
-			: 
-			<Flex
-				flexDirection="column"
-				alignItems="center"
-				h="100%"
-				w="100%"
-				position="relative"
-		>
-			<Box w='80%' h="1px" bgColor="black" mb="24px" />
-
-			<Image src="./MENU.svg" w="270px" height="70px" />
-
-			<Flex
-				flexDirection="column"
-				alignItems="center"
-				py="36px"
-				minH="100%"
-				justifyContent="space-between"
-			>
-				<Text fontSize="1rem" mb="24px">
-					<a
-						href={
-							API_URL + menu.data.attributes.menu_fr.data[0].attributes.url
-						}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						FRANCAIS
-					</a>
-				</Text>
-
-				<Text fontSize="1rem" mb="24px">
-					<a
-						href={
-							API_URL + menu.data.attributes.menu_en.data[0].attributes.url
-						}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						ENGLISH
-					</a>
-				</Text>
-
-				<Text fontSize="1rem" mb="24px">
-					<a
-						href={
-							API_URL + menu.data.attributes.menu_nl.data[0].attributes.url
-						}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						NEDERLANDS
-					</a>
-				</Text>
-
-				<Text color="black" fontSize="1rem" whiteSpace="normal">
-					{menu.data.attributes.menu_explanations}
-				</Text>
-			</Flex>
-		</Flex>
-			}
-		</>
 	);
 };
 

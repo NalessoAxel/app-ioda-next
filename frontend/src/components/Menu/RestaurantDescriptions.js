@@ -9,7 +9,7 @@ const RestaurantDescriptions = ({ description }) => {
 			flexDirection={['column', 'row']}	
 			alignItems="center"
 			justifyContent="center"
-			// maxW={['auto', "408px"]}
+			maxW={['auto', "408px"]}
 		>
 			<Text
 				color="black"

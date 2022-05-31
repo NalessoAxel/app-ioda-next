@@ -26,7 +26,7 @@ const Menu = ({ description, menu, openingHours }) => {
 				h={["100%", "calc(100vh - 124px -  61px)"]}
 				flexDirection={['column', 'row']}
 				alignItems="center"
-				// justifyContent="space-between"
+				justifyContent={["none", "space-between"]}
 				
 			>
 				<RestaurantDescriptions description={description} />
